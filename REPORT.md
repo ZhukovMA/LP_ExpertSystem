@@ -42,13 +42,14 @@ answers([First|Rest], Index):-
     answers(Rest, NextIndex).
 
 Механизм запоминания ответа пользователя:
-ask(Question, Answer, Choices) :-
+«`{prolog} {ask(Question, Answer, Choices) :-
     question(Question),
     answers(Choices, 0),
     read(Index),
     parse(Index, Choices, Response),
     asserta(progress(Question, Response)),
-    Response = Answer.
+    Response = Answer.а}«`
+
 
 Пользователю задаются вопросы, в базу знаний с помощью предиката asserta подгружаются новые ответы, когда какое-либо решение было найдено система отвечает на вопрос.
 
